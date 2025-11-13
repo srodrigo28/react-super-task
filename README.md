@@ -45,6 +45,11 @@ export default defineConfig({
 ```
 @import "tailwindcss";
 ```
+
+* svg plugin
+```
+npm i -D vite-plugin-svgr
+```
 #### Vamos desenvolver Interfaces Incríveis.
 
 <img src="./preview/00-minhas-tarefas-home.png" alt="">

@@ -1,16 +1,17 @@
 
-const SidebarButton = ({ children, variant }) => {
+const SidebarButton = ({ children, variant, icon }) => {
     const getVariantClasses = () => {
         if (variant === "uselected") {
-            return "text-slate-500"
+            return "text-[#a2eedc]  border-[#a2eedc]"
         }
 
         if (variant === "selected") {
-            return " bg-[#E6F7F8]"
+            return "bg-[#E6F7F8] text-[#00ADB5] border-none"
         }
     }
     return (
-        <a href="/" className={`px-3 py-3 text-[#00ADB5]  rouded-2xl border-2 border-[#E6F7F8] ${getVariantClasses()}`}>
+        <a href="/" className={`flex gap-1 px-3 py-3 rouded-2xl border rounded-sm ${getVariantClasses()}`}>
+            {icon}
             {children}
         </a>
     )

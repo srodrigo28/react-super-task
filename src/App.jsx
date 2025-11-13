@@ -1,11 +1,11 @@
-import Header from './components/Header'
-import Task from './components/Task'
+import Sidebar from './components/Sidebar';
+
+import './index.css'
 
 function App() {
   return (
-    <div className='bg-slate-800'>
-      <Header />
-      <Task />
+    <div className=''>
+      <Sidebar />
     </div>
   )
 }

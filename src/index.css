@@ -1,11 +1,13 @@
-*{
+@import "tailwindcss";
+
+* {
     margin: 0;
     padding: 0;
-    
+
     box-sizing: border-box;
 }
 
-html{
+html {
     color: #fff;
     background-color: #222;
     font-family: Arial, sans-serif;

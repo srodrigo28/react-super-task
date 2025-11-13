@@ -1,9 +1,9 @@
-import Header  from './components/Header'
+import Header from './components/Header'
 import Task from './components/Task'
 
 function App() {
   return (
-    <div>
+    <div className='bg-slate-800'>
       <Header />
       <Task />
     </div>

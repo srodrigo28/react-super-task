@@ -25,7 +25,7 @@ const Tasks = () => {
     const nightTasks = tasks.filter(task => task.time === 'evening');
 
     return (
-        <div className="py-16 px-8 w-full">
+        <div className="py-16 px-8 w-full mr-7">
             <div className="flex w-full justify-between">
                 <div className="flex flex-col w-full justify-between">
                     <span className="text-sm font-semibold text-[#00AD85]">
@@ -48,8 +48,8 @@ const Tasks = () => {
             </div >
 
             <div className="rounded-xl bg-white p-6 shadow-sm mt-3">
-                <TasksSeparator title="Manhã" icon={<SunIcon />} />
                 <div className="mb-2">
+                <TasksSeparator title="Manhã" icon={<SunIcon />} />
                     {mormingTasks.map((task) => (
                         <TaskItem key={task.id} task={task} />
                     ))}

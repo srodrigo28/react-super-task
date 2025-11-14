@@ -1,6 +1,11 @@
 * Link aula
-```
+``` Setup
 https://alunos.fullstackclub.com.br/area/produto/item/3287022
+```
+
+
+``` Listando Tarefas
+https://alunos.fullstackclub.com.br/area/produto/item/3354344
 ```
 
 * Link Github

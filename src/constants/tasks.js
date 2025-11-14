@@ -31,14 +31,14 @@ const TASKS = [
         id: 5,
         title: 'API Rest com NodeJS',
         description: '',
-        time: 'afternoon',
+        time: 'night',
         status: 'not_started'
     },
     {
         id: 6,
         title: 'API Rest com Java Spring',
         description: '',
-        time: 'afternoon',
+        time: 'night',
         status: 'not_started'
     },
 ]

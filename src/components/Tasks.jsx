@@ -10,15 +10,18 @@ import MoonIcon from '../assets/icons/moon.svg?react';
 
 import { useState } from "react";
 import TASKS from "../constants/tasks";
+import TasksSeparator from "./TasksSeparator";
 
 const Tasks = () => {
     // todo: fetch tasks from api
-    const [Tasks, setTaks] = useState(TASKS)
+    const [tasks, setTaks] = useState(TASKS)
+
+    console.log(tasks);
 
     // filter tasks by period
-    const mormingTasks = Tasks.filter(task => task.period === 'morning');
-    const afternoonTasks = Tasks.filter(task => task.period === 'afternoon');
-    const nightTasks = Tasks.filter(task => task.period === 'night');
+    const mormingTasks = tasks.filter(task => task.time === 'morning');
+    const afternoonTasks = tasks.filter(task => task.time === 'afternoon');
+    const nightTasks = tasks.filter(task => task.time === 'night');
 
     return (
         <div className="py-16 px-8 w-full">
@@ -29,11 +32,11 @@ const Tasks = () => {
                     <span className="text-xs font-semibold text-[#00AD85]">
                         Super Tarefas
                     </span>
-                    <h1 className="text-xl font-semibold">Tasks Component</h1>
+                    <h1 className="text-xl font-semibold text-slate-600">Tasks Component</h1>
                 </div>
 
-                <div className="flex gap-1 items-center">
-                    <Button variant="ghost" className="">
+                <div className="flex gap-2 items-center">
+                    <Button variant="secondary" className="">
                         Remover tarefa
                         <TrashIcon />
                     </Button>
@@ -46,25 +49,25 @@ const Tasks = () => {
             </div >
 
             <div className="rounded-xl bg-white p-6 shadow-md mt-3">
-                <div className="py-6">
-                    <div className="flex gap-2 items-center pb-2 border-b border-solid border-[#F4F4F5]">
-                        <SunIcon />
-                        <p className="text-[#9A9C9F]">Manhã</p>
-                    </div>
+                <TasksSeparator title="Manhã" icon={<SunIcon />} />
+                <div className="mb-5">
+                    {mormingTasks.map((task) => (
+                        <p key={task.id} className="py-1 text-slate-400 pl-8 text-xs">{task.title}</p>
+                    ))}
                 </div>
 
-                <div className="py-6">
-                    <div className="flex gap-2 items-center pb-2 border-b border-solid border-[#F4F4F5]">
-                        <CloudSunIcon />
-                        <p className="text-[#9A9C9F]">Tarde</p>
-                    </div>
+                <TasksSeparator title="Tarde" icon={<CloudSunIcon />} />
+                <div className="mb-5">
+                    {afternoonTasks.map((task) => (
+                        <p key={task.id} className="py-1 text-slate-400 pl-8 text-xs">{task.title}</p>
+                    ))}
                 </div>
 
-                <div className="py-6">
-                    <div className="flex gap-2 items-center pb-2 border-b border-solid border-[#F4F4F5]">
-                        <MoonIcon />
-                        <p className="text-[#9A9C9F]">Noite</p>
-                    </div>
+                <TasksSeparator title="Noite" icon={<MoonIcon />} />
+                <div className="mb-5">
+                    {nightTasks.map((task) => (
+                        <p key={task.id} className="py-1 text-slate-400 pl-8 text-xs">{task.title}</p>
+                    ))}
                 </div>
             </div>
         </div>

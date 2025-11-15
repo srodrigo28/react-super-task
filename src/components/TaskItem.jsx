@@ -7,13 +7,13 @@ const TaskItem = ({ task, handleCheckboxClick, handleDeleteTask }) => {
 
     const getStatusClass = () => {
         if (task.status === "done") {
-            return "bg-green-300 text-[#00AD85]";
+            return "bg-green-300 opacity-60";
         } 
         else if (task.status === "in_progress") {
-            return "bg-amber-300 text-[#E2A400]";
+            return "bg-amber-300 opacity-60";
         } 
         else if (task.status === "not_started") {
-            return "bg-red-300 text-slate-400";
+            return "bg-red-300 opacity-60";
         }
     };
 
@@ -45,8 +45,7 @@ const TaskItem = ({ task, handleCheckboxClick, handleDeleteTask }) => {
                         <CheckLoaderCircle className="animate-spin text-white" />
                     )}
                 </label>
-
-                {task.title}
+                <p className='text-slate-500 text-[0.9rem] font-semibold tracking-wide'>{task.title}</p>
             </div>
 
             <div className="flex gap-1 items-center transition-all">

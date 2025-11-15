@@ -18,28 +18,14 @@ const Tasks = () => {
 
     const handleCheckboxClick = (taskId) => {
         const newTasks = tasks.map(task => {
-            if (task.id !== taskId) {
-                return task;
-            }
-
-            if (task.status === "not_started") {
-                return { ...task, status: "in_progress" };
-            }
-
-            if (task.status === "in_progress") {
-                return { ...task, status: "done" };
-            }
-
-            if (task.status === "done") {
-                return { ...task, status: "not_started" };
-            }
-
+            if (task.id !== taskId) return task;
+            if (task.status === "not_started") return { ...task, status: "in_progress" };
+            if (task.status === "in_progress") return { ...task, status: "done" };
+            if (task.status === "done") return { ...task, status: "not_started" };
             return task;
         });
-
         setTaks(newTasks);
     };
-
     const mormingTasks = tasks.filter(task => task.time === 'morning');
     const afternoonTasks = tasks.filter(task => task.time === 'afternoon');
     const nightTasks = tasks.filter(task => task.time === 'evening');
@@ -57,57 +43,34 @@ const Tasks = () => {
                 </div>
 
                 <div className="flex gap-2 items-center">
-                    <div className="hidden lg:block md:block">
-                        <Button variant="secondary">
-                            Remover tarefa
-                            <TrashIcon />
-                        </Button>
-                    </div>
-
-                    <Button variant="primary">
-                        Nova tarefa
-                        <AddIcon />
-                    </Button>
+                    <Button variant="secondary"> Remover tarefa<TrashIcon /> </Button>
+                    <Button variant="primary"> Nova tarefa <AddIcon /> </Button>
                 </div>
             </div>
 
             <div className="rounded-xl bg-white p-6 shadow-sm mt-3 pr-9">
-
-                <div className="mb-2">
                     <TasksSeparator title="Manhã" icon={<SunIcon className="w-10 h-10" />} />
                     {mormingTasks.map(task => (
-                        <TaskItem
-                            key={task.id}
-                            task={task}
+                        <TaskItem  key={task.id} task={task}
                             handleCheckboxClick={handleCheckboxClick}
                         />
                     ))}
-                </div>
 
                 <TasksSeparator title="Tarde" icon={<CloudSunIcon className="w-10 h-10" />} />
-                <div className="mb-2">
                     {afternoonTasks.map(task => (
-                        <TaskItem
-                            key={task.id}
-                            task={task}
+                        <TaskItem  key={task.id} task={task}
                             handleCheckboxClick={handleCheckboxClick}
                         />
                     ))}
-                </div>
 
                 <TasksSeparator title="Noite" icon={<MoonIcon className="w-10 h-10" />} />
-                <div className="mb-2">
                     {nightTasks.map(task => (
-                        <TaskItem
-                            key={task.id}
-                            task={task}
+                        <TaskItem key={task.id} task={task}
                             handleCheckboxClick={handleCheckboxClick}
                         />
                     ))}
-                </div>
             </div>
         </div>
     );
 };
-
 export default Tasks;

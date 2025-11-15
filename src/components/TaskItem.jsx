@@ -49,7 +49,7 @@ const TaskItem = ({ task, handleCheckboxClick }) => {
                 {task.title}
             </div>
 
-            <div className="flex gap-1 items-center">
+            <div className="flex gap-1 items-center transition-all">
                 <Details className="text-white hover:opacity-80 transition-all h-6 w-6" />
                 <Trash className="text-white h-6 w-6" />
             </div>

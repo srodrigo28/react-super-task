@@ -4,7 +4,7 @@ const Button = ({ children, variant }) => {
             case 'primary':
                 return 'bg-green-300 text-white hover:bg-green-500 hover:text-white';
             case 'secondary':
-                return 'bg-red-300 text-white hover:bg-red-500 hover:text-slate-200';
+                return 'bg-red-300 text-white hover:bg-red-500 hover:text-slate-200  hidden';
             case 'tertiary':
                 return 'bg-gray-500 text-white hover:bg-gray-500 hover:text-slate-200';
             case 'ghost':

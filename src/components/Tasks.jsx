@@ -38,23 +38,25 @@ const Tasks = () => {
     };
 
     const handleDeleteTask = (taskId, taskTitle) => {
-        const deleteYes = confirm("Tem certeza que deseja deletar essa tarefa? " + taskTitle);
-        if (deleteYes) {
-            const newTasks = tasks.filter(task => task.id !== taskId);
-            setTaks(newTasks);
-
-            toast.success(`Tarefa "${taskTitle}" removida com sucesso!`);
-        }
-    };
+  toast(`Deseja deletar a tarefa "${taskTitle}"?`, {
+    description: "Essa ação não pode ser desfeita.",
+    action: {
+      label: "Deletar",
+      onClick: () => {
+        const newTasks = tasks.filter(task => task.id !== taskId);
+        setTaks(newTasks);
+        toast.success(`Tarefa "${taskTitle}" removida com sucesso!`);
+      },
+    },
+  });
+};
 
     const mormingTasks = tasks.filter(task => task.time === 'morning');
     const afternoonTasks = tasks.filter(task => task.time === 'afternoon');
     const nightTasks = tasks.filter(task => task.time === 'evening');
 
-
-
     return (
-        <div className="py-16 px-8 w-full md:mr-7">
+        <div className="py-16 px-8 w-full mr-7 md:mr-12">
             <div className="flex w-full justify-between">
                 <div className="flex flex-col w-full justify-between">
                     <span className="text-sm max-[500px]:text-[1.4rem] max-[500px]:text-green-400 font-semibold text-[#00AD85]">
@@ -67,11 +69,12 @@ const Tasks = () => {
 
                 <div className="flex gap-2 items-center">
                     <Button variant="secondary"> Remover tarefa<TrashIcon /> </Button>
-                    <Button onClick={ () => alert('Hello how are you') } variant="primary"> Nova tarefa <AddIcon /> </Button>
+                     {/* onClick={ () => alert('Hello how are you') } */}
+                    <Button variant="primary"> Nova tarefa <AddIcon /> </Button>
                 </div>
             </div>
 
-            <div className="rounded-xl bg-white p-6 shadow-sm mt-3 md:pr-9">
+            <div className="rounded-xl bg-white p-6 shadow-sm mt-3">
                     <TasksSeparator title="Manhã" icon={<SunIcon className="w-10 h-10" />} />
                     {mormingTasks.map(task => (
                         <TaskItem  key={task.id} task={task}

@@ -1,13 +1,10 @@
 'use client';
 
 import Button from "./Button";
-import AddIcon from '../assets/icons/add.svg?react';
-import TrashIcon from '../assets/icons/trash.svg?react';
 
-import SunIcon from '../assets/icons/sun.svg?react';
-import CloudSunIcon from '../assets/icons/cloud-sun.svg?react';
-import MoonIcon from '../assets/icons/moon.svg?react';
 import TaskItem from "./TaskItem";
+
+import { AddIcon, CloudSunIcon, MoonIcon, SunIcon, TrashIcon } from '../assets/icons'
 
 import { useState } from "react";
 import TASKS from "../constants/tasks";

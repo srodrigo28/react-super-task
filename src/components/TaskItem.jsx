@@ -33,7 +33,7 @@ const TaskItem = ({ task, handleCheckboxClick, handleDeleteTask }) => {
                     <input
                         type="checkbox"
                         checked={task.status === "done"}
-                        onChange={() => handleCheckboxClick(task.id)}
+                        onChange={() => handleCheckboxClick(task.id, task.title)}
                         className="absolute inset-0 h-full w-full cursor-pointer opacity-0 peer"
                     />
 

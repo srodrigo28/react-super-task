@@ -2,7 +2,8 @@
 
 As tags servem para marcar pontos específicos da história do repositório, normalmente versões.
 Como criar uma tag pelo Git:
-git tag -a v1.0.0 -m "Primeira versão"
+
+git tag -a v1.5.0 -m "Segunda versão"
 git push origin v1.0.0
 
 

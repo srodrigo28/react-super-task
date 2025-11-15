@@ -12,6 +12,7 @@ import TaskItem from "./TaskItem";
 import { useState } from "react";
 import TASKS from "../constants/tasks";
 import TasksSeparator from "./TasksSeparator";
+import { toast } from "sonner";
 
 const Tasks = () => {
     const [tasks, setTaks] = useState(TASKS);
@@ -19,9 +20,18 @@ const Tasks = () => {
     const handleCheckboxClick = (taskId, taskTitle) => {
         const newTasks = tasks.map(task => {
             if (task.id !== taskId) return task;
-            if (task.status === "not_started") return { ...task, status: "in_progress" };
-            if (task.status === "in_progress") return { ...task, status: "done" };
-            if (task.status === "done") return { ...task, status: "not_started" };
+            if (task.status === "not_started") {
+                toast.success(`Tarefa "${taskTitle}" em progresso!`);
+                return { ...task, status: "in_progress" }
+            };
+            if (task.status === "in_progress") {
+                toast.success(`Tarefa "${taskTitle}" concluída!`);
+                return { ...task, status: "done" };
+            }
+            if (task.status === "done") {
+                toast.success(`Tarefa "${taskTitle}"não iniciada`);
+                return { ...task, status: "not_started" };
+            }
             return task;
         });
         setTaks(newTasks);
@@ -32,6 +42,8 @@ const Tasks = () => {
         if (deleteYes) {
             const newTasks = tasks.filter(task => task.id !== taskId);
             setTaks(newTasks);
+
+            toast.success(`Tarefa "${taskTitle}" removida com sucesso!`);
         }
     };
 

@@ -1,6 +1,6 @@
 import Sidebar from './components/Sidebar';
 import Tasks from './components/Tasks';
-
+import { Toaster } from 'sonner'
 import './index.css'
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <div className="hidden lg:block md:block">
         <Sidebar />
       </div>
+      <Toaster position="top-right" richColors />
       <Tasks />
     </div>
   )

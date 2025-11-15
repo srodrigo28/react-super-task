@@ -42,7 +42,7 @@ const Tasks = () => {
 
 
     return (
-        <div className="py-16 px-8 w-full mr-7">
+        <div className="py-16 px-8 w-full md:mr-7">
             <div className="flex w-full justify-between">
                 <div className="flex flex-col w-full justify-between">
                     <span className="text-sm max-[500px]:text-[1.4rem] max-[500px]:text-green-400 font-semibold text-[#00AD85]">
@@ -59,7 +59,7 @@ const Tasks = () => {
                 </div>
             </div>
 
-            <div className="rounded-xl bg-white p-6 shadow-sm mt-3 pr-9">
+            <div className="rounded-xl bg-white p-6 shadow-sm mt-3 md:pr-9">
                     <TasksSeparator title="Manhã" icon={<SunIcon className="w-10 h-10" />} />
                     {mormingTasks.map(task => (
                         <TaskItem  key={task.id} task={task}

@@ -56,7 +56,7 @@ const Tasks = () => {
     const nightTasks = tasks.filter(task => task.time === 'evening');
 
     return (
-        <div className="py-16 px-8 w-full mr-7 md:mr-12">
+        <div className="py-16 px-8 w-screen mr-7 md:mr-12">
             <div className="flex w-full justify-between">
                 <div className="flex flex-col w-full justify-between">
                     <span className="text-sm max-[500px]:text-[1.4rem] max-[500px]:text-green-400 font-semibold text-[#00AD85]">

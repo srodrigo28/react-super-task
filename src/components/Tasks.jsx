@@ -16,7 +16,7 @@ import TasksSeparator from "./TasksSeparator";
 const Tasks = () => {
     const [tasks, setTaks] = useState(TASKS);
 
-    const handleCheckboxClick = (taskId) => {
+    const handleCheckboxClick = (taskId, taskTitle) => {
         const newTasks = tasks.map(task => {
             if (task.id !== taskId) return task;
             if (task.status === "not_started") return { ...task, status: "in_progress" };
@@ -26,9 +26,20 @@ const Tasks = () => {
         });
         setTaks(newTasks);
     };
+
+    const handleDeleteTask = (taskId, taskTitle) => {
+        const deleteYes = confirm("Tem certeza que deseja deletar essa tarefa? " + taskTitle);
+        if (deleteYes) {
+            const newTasks = tasks.filter(task => task.id !== taskId);
+            setTaks(newTasks);
+        }
+    };
+
     const mormingTasks = tasks.filter(task => task.time === 'morning');
     const afternoonTasks = tasks.filter(task => task.time === 'afternoon');
     const nightTasks = tasks.filter(task => task.time === 'evening');
+
+
 
     return (
         <div className="py-16 px-8 w-full mr-7">
@@ -53,6 +64,7 @@ const Tasks = () => {
                     {mormingTasks.map(task => (
                         <TaskItem  key={task.id} task={task}
                             handleCheckboxClick={handleCheckboxClick}
+                            handleDeleteTask={handleDeleteTask}
                         />
                     ))}
 
@@ -60,6 +72,7 @@ const Tasks = () => {
                     {afternoonTasks.map(task => (
                         <TaskItem  key={task.id} task={task}
                             handleCheckboxClick={handleCheckboxClick}
+                            handleDeleteTask={handleDeleteTask}
                         />
                     ))}
 
@@ -67,6 +80,7 @@ const Tasks = () => {
                     {nightTasks.map(task => (
                         <TaskItem key={task.id} task={task}
                             handleCheckboxClick={handleCheckboxClick}
+                            handleDeleteTask={handleDeleteTask}
                         />
                     ))}
             </div>

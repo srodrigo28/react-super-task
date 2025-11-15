@@ -1,4 +1,4 @@
-const Button = ({ children, variant }) => {
+const Button = ({ children, variant, onClick }) => {
     const getVariantClasses = () => {
         switch (variant) {
             case 'primary':
@@ -14,7 +14,10 @@ const Button = ({ children, variant }) => {
         }
     }
     return (
-        <button className={`w-34 text-xs hover:opacity-55 cursor-pointer flex gap-1 items-center justify-center py-2 px-3 rounded-md ${getVariantClasses()}`}>
+        <button onClick={onClick} 
+            className={`w-34 text-xs hover:opacity-55 cursor-pointer flex gap-1 items-center 
+            justify-center py-2 px-3 rounded-md ${getVariantClasses()}`}
+        >
             {children}
         </button>
     )

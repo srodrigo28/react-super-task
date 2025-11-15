@@ -55,7 +55,7 @@ const Tasks = () => {
 
                 <div className="flex gap-2 items-center">
                     <Button variant="secondary"> Remover tarefa<TrashIcon /> </Button>
-                    <Button variant="primary"> Nova tarefa <AddIcon /> </Button>
+                    <Button onClick={ () => alert('Hello how are you') } variant="primary"> Nova tarefa <AddIcon /> </Button>
                 </div>
             </div>
 

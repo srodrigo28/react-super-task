@@ -14,105 +14,100 @@ import TASKS from "../constants/tasks";
 import TasksSeparator from "./TasksSeparator";
 
 const Tasks = () => {
-    // todo: fetch tasks from api
-    const [tasks, setTaks] = useState(TASKS)
+    const [tasks, setTaks] = useState(TASKS);
 
-    const handleCheckboxClick = (task) => {
-        // alert('Selecionou a task: ' + task.title );
-        // console.log('Clicou no task com id: ', task.title);    
-        
+    const handleCheckboxClick = (taskId) => {
         const newTasks = tasks.map(task => {
-            if(task.id !== task.id) {
+            if (task.id !== taskId) {
                 return task;
             }
 
-            if(task.status === "not_started") {
+            if (task.status === "not_started") {
                 return { ...task, status: "in_progress" };
             }
 
-            if(task.status === "in_progress") {
+            if (task.status === "in_progress") {
                 return { ...task, status: "done" };
             }
 
-            if(task.status === "done") {
+            if (task.status === "done") {
                 return { ...task, status: "not_started" };
             }
 
             return task;
-        })
- 
+        });
+
         setTaks(newTasks);
-    }
+    };
 
-    // console.log(tasks);
-
-    // filter tasks by period
     const mormingTasks = tasks.filter(task => task.time === 'morning');
     const afternoonTasks = tasks.filter(task => task.time === 'afternoon');
     const nightTasks = tasks.filter(task => task.time === 'evening');
 
     return (
-        <div className="py-16 px-8 w-full mr-7 ">
+        <div className="py-16 px-8 w-full mr-7">
             <div className="flex w-full justify-between">
                 <div className="flex flex-col w-full justify-between">
                     <span className="text-sm max-[500px]:text-[1.4rem] max-[500px]:text-green-400 font-semibold text-[#00AD85]">
                         Super Tarefas
                     </span>
-                    <h1 className="text-xl font-semibold text-green-600 hidden md:block lg:block">Tasks Component</h1>
+                    <h1 className="text-xl font-semibold text-green-600 hidden md:block lg:block">
+                        Tasks Component
+                    </h1>
                 </div>
 
                 <div className="flex gap-2 items-center">
                     <div className="hidden lg:block md:block">
-                        <Button variant="secondary" >
+                        <Button variant="secondary">
                             Remover tarefa
                             <TrashIcon />
                         </Button>
                     </div>
-                    
-                    <Button variant="primary" className="">
+
+                    <Button variant="primary">
                         Nova tarefa
                         <AddIcon />
                     </Button>
-
                 </div>
-            </div >
+            </div>
 
-             {/* overflow-y-auto h-[calc(100vh-180px)] */}
             <div className="rounded-xl bg-white p-6 shadow-sm mt-3 pr-9">
+
                 <div className="mb-2">
-                <TasksSeparator title="Manhã" icon={<SunIcon className="w-10 h-10" />} />
-                    {mormingTasks.map((task) => (
-                        <TaskItem  
-                        key={task.id}
-                        task={task}
-                        handleCheckboxClick={handleCheckboxClick} />
+                    <TasksSeparator title="Manhã" icon={<SunIcon className="w-10 h-10" />} />
+                    {mormingTasks.map(task => (
+                        <TaskItem
+                            key={task.id}
+                            task={task}
+                            handleCheckboxClick={handleCheckboxClick}
+                        />
                     ))}
                 </div>
 
                 <TasksSeparator title="Tarde" icon={<CloudSunIcon className="w-10 h-10" />} />
                 <div className="mb-2">
-                    {afternoonTasks.map((task) => (
-                         <TaskItem 
-                            key={task.id} 
+                    {afternoonTasks.map(task => (
+                        <TaskItem
+                            key={task.id}
                             task={task}
-                            handleCheckboxClick={handleCheckboxClick} 
+                            handleCheckboxClick={handleCheckboxClick}
                         />
                     ))}
                 </div>
 
                 <TasksSeparator title="Noite" icon={<MoonIcon className="w-10 h-10" />} />
                 <div className="mb-2">
-                    {nightTasks.map((task) => (
-                         <TaskItem 
-                         key={task.id} 
-                         task={task} 
-                         handleCheckboxClick={handleCheckboxClick} 
+                    {nightTasks.map(task => (
+                        <TaskItem
+                            key={task.id}
+                            task={task}
+                            handleCheckboxClick={handleCheckboxClick}
                         />
                     ))}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Tasks;

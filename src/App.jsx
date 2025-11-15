@@ -6,7 +6,9 @@ import './index.css'
 function App() {
   return (
     <div className='flex gap-9'>
-      <Sidebar />
+      <div className="hidden lg:block md:block">
+        <Sidebar />
+      </div>
       <Tasks />
     </div>
   )

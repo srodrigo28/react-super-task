@@ -14,7 +14,7 @@ const Button = ({ children, variant }) => {
         }
     }
     return (
-        <button className={`w-34 text-xs cursor-pointer flex gap-1 items-center justify-center py-2 px-3 rounded-md ${getVariantClasses()}`}>
+        <button className={`w-34 text-xs hover:opacity-55 cursor-pointer flex gap-1 items-center justify-center py-2 px-3 rounded-md ${getVariantClasses()}`}>
             {children}
         </button>
     )

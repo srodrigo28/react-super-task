@@ -3,9 +3,14 @@
 https://alunos.fullstackclub.com.br/area/produto/item/3287022
 ```
 
-
-``` Listando Tarefas
+* Listando Tarefas
+``` 
 https://alunos.fullstackclub.com.br/area/produto/item/3354344
+```
+
+* Alterando Status Tarefa
+```
+https://alunos.fullstackclub.com.br/area/produto/item/3354354
 ```
 
 * Link Github

@@ -4,7 +4,7 @@ const TasksSeparator = ({ title, icon }) => {
             <div className="flex gap-2 items-center border-b 
                 border-solid border-[#F4F4F5]">
                 {icon}
-                <p className="text-[#9A9C9F]">{title}</p>
+                <p className="text-[#9A9C9F] text-xl font-semibold">{title}</p>
             </div>
         </div>
     )

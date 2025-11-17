@@ -1,5 +1,7 @@
-### React Super Task com JSX
-
+### React Super Task
+* ReactJSX
+* Json Server
+* API
 #### Padronizando código.
 
 🧩 ESLint

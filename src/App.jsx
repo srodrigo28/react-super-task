@@ -3,6 +3,11 @@ import Tasks from './components/Tasks';
 import { Toaster } from 'sonner'
 import './index.css'
 
+/**
+ * Página main
+ * @returns 
+ */
+
 function App() {
   return (
     <div className='flex gap-9'>

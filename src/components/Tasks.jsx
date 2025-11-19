@@ -14,6 +14,7 @@ import AddTaskDialog from "./AddTaskDialog";
 
 const Tasks = () => {
     const [tasks, setTaks] = useState(TASKS);
+    const [addTtaskDialogIsOpen, setAddTaskDialogIsOpen] = useState(false)
 
     const handleCheckboxClick = (taskId, taskTitle) => {
         const newTasks = tasks.map(task => {
@@ -68,11 +69,11 @@ const Tasks = () => {
                 <div className="flex gap-2 items-center">
                     <Button variant="secondary"> Remover tarefa<TrashIcon /> </Button>
                      {/* onClick={ () => alert('Hello how are you') } */}
-                    <Button variant="primary"> 
+                    <Button variant="primary" onClick={ () => setAddTaskDialogIsOpen(true) }> 
                         Nova tarefa <AddIcon /> 
                     </Button>
 
-                    <AddTaskDialog isOpen={true} />
+                    <AddTaskDialog isOpen={addTtaskDialogIsOpen} />
                 </div>
             </div>
 

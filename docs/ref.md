@@ -16,6 +16,9 @@ https://alunos.fullstackclub.com.br/area/produto/item/3354354
 * Dialogs & Portals      (( ATUAL ))
 https://alunos.fullstackclub.com.br/area/produto/item/3402785
 
+* Criação de Tarefas (10:00)
+https://alunos.fullstackclub.com.br/area/produto/item/3402834
+
 * Link Github
 ```
     https://github.com/felipemotarocha/fullstackclub-todo-app/tree/main

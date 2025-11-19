@@ -1,59 +1,42 @@
-### React Super Task
-* ReactJSX
-* Json Server
-* API
-#### Padronizando código.
+# 🚀 React Super Task
 
-🧩 ESLint
-    Padronizar e manter a qualidade do código
-    Detectar e corrigir erros de estilo e boas práticas automaticamente
+Uma aplicação moderna de gerenciamento de tarefas construída com **React 19**, **Vite**, **Tailwind CSS** e design focado em performance e experiência do usuário.
 
-🎨 Prettier
-    Padronizar a formatação do código (espaços, quebras de linha, aspas, etc.)
-    Garantir consistência visual entre todos os arquivos do projeto
+![React](https://img.shields.io/badge/React-19.0-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-5.4-7C3AED?logo=vite)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwind-css)
+![License](https://img.shields.io/github/license/seu-usuario/react-super-task)
 
-🧩 Husky
+## ✨ Funcionalidades
 
-🎨 Saas vs 
-    Emotion vs 
-    usando TailWindCSS
-    Styled Components vs 
+- ➕ Criar, editar e excluir tarefas
+- ✅ Marcar tarefas como concluídas
+- 📅 Filtrar por status (todas, pendentes, concluídas)
+- 🔍 Detalhes completos da tarefa
+- 🎨 Interface moderna e responsiva com Tailwind CSS
+- ⚡ Desenvolvimento rápido com Vite + React 19
+- 💾 Dados persistidos localmente com JSON Server
 
-🧩 TailWindCSS
-https://tailwindcss.com/docs/installation/using-vite
+## 🖼️ Preview
 
-#### Instando TailWindCSS
-* 1. passo dependências
-```
-npm install tailwindcss @tailwindcss/vite
-```
+<div align="center">
+  <img src="./preview/00-minhas-tarefas-home.png" alt="Home" width="100%"/>
+  <br/><br/>
+  <img src="./preview/01-minhas-tarefas.png" alt="Lista de tarefas" width="100%"/>
+  <br/><br/>
+  <img src="./preview/02-minhas-tarefas-detalhes.png" alt="Detalhes da tarefa" width="100%"/>
+</div>
 
-* 2 passo vite.config.ts
-```
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+## 🛠️ Tecnologias Utilizadas
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
-})
-```
+| Tecnologia         | Versão    | Finalidade                          |
+|--------------------|-----------|-------------------------------------|
+| React + JSX        | 19.0      | Biblioteca principal de UI          |
+| Vite               | 5.4+      | Build tool ultrarrápida             |
+| Tailwind CSS       | 3.4+      | Estilização utilitária              |
+| JSON Server        | latest    | API fake para desenvolvimento      |
+| Sonner             | latest    | Toasts elegantes e leves            |
+| ESLint + Prettier  | -         | Qualidade e padronização de código  |
+| Husky              | -         | Git hooks para lint antes do commit |
 
-* 3 passo index.css
-```
-@import "tailwindcss";
-```
-
-* svg plugin
-```
-npm i -D vite-plugin-svgr
-```
-#### Vamos desenvolver Interfaces Incríveis.
-
-<img src="./preview/00-minhas-tarefas-home.png" alt="">
-<img src="./preview/01-minhas-tarefas.png" alt="">
-<img src="./preview/02-minhas-tarefas-detalhes.png" alt="">
+## 🚀 Começando

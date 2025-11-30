@@ -2,7 +2,7 @@ import { createPortal } from "react-dom";
 import Input from "./Input";
 import Button from "./Button"
 
-const AddTaskDialog = ({ isOpen }) => {
+const AddTaskDialog = ({ isOpen, handleDialogClose }) => {
     if (!isOpen) return
 
     return createPortal(
@@ -20,7 +20,7 @@ const AddTaskDialog = ({ isOpen }) => {
                         <Input id="description" label="Descrição" placeholder="Descrição da tarefa" />
                     </div>
                     <div className="flex justify-center gap-3">
-                        <Button variant="danger">Cancelar</Button>
+                        <Button onClick={handleDialogClose} variant="danger">Cancelar</Button>
                         <Button variant="primary">Salvar</Button>
                     </div>
                 </div>

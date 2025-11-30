@@ -1,4 +1,4 @@
-const Button = ({ children, variant, size="large", onClick, ...rest }) => {
+const Button = ({ children, variant, size="large", onClick, className, ...rest }) => {
     const getVariantClasses = () => {
         switch (variant) {
             case 'primary':
@@ -33,6 +33,7 @@ const Button = ({ children, variant, size="large", onClick, ...rest }) => {
             justify-center px-3 rounded-md 
             py-2 text-sm hover:bg-green-500 text-white transition-transform
             ${getVariantClasses()}
+            ${className}
         ` }
         {...rest}
         >

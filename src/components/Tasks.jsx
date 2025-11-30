@@ -36,19 +36,23 @@ const Tasks = () => {
         setTaks(newTasks);
     };
 
+    const handleDialogClose = () => {
+        setAddTaskDialogIsOpen(false)
+    }
+
     const handleDeleteTask = (taskId, taskTitle) => {
-  toast(`Deseja deletar a tarefa "${taskTitle}"?`, {
-    description: "Essa ação não pode ser desfeita.",
-    action: {
-      label: "Deletar",
-      onClick: () => {
-        const newTasks = tasks.filter(task => task.id !== taskId);
-        setTaks(newTasks);
-        toast.success(`Tarefa "${taskTitle}" removida com sucesso!`);
-      },
-    },
-  });
-};
+        toast(`Deseja deletar a tarefa "${taskTitle}"?`, {
+            description: "Essa ação não pode ser desfeita.",
+            action: {
+                label: "Deletar",
+                onClick: () => {
+                    const newTasks = tasks.filter(task => task.id !== taskId);
+                    setTaks(newTasks);
+                    toast.success(`Tarefa "${taskTitle}" removida com sucesso!`);
+                },
+            },
+        });
+    };
 
     const mormingTasks = tasks.filter(task => task.time === 'morning');
     const afternoonTasks = tasks.filter(task => task.time === 'afternoon');
@@ -68,39 +72,42 @@ const Tasks = () => {
 
                 <div className="flex gap-2 items-center">
                     <Button className="hidden" variant="secondary"> Remover tarefa<TrashIcon /> </Button>
-                     {/* onClick={ () => alert('Hello how are you') } */}
-                    <Button variant="primary" onClick={ () => setAddTaskDialogIsOpen(true) }> 
-                        Nova tarefa <AddIcon /> 
+                    {/* onClick={ () => alert('Hello how are you') } */}
+                    <Button variant="primary" onClick={() => setAddTaskDialogIsOpen(true)}>
+                        Nova tarefa <AddIcon />
                     </Button>
 
-                    <AddTaskDialog isOpen={addTtaskDialogIsOpen} />
+                    <AddTaskDialog 
+                        isOpen={addTtaskDialogIsOpen}
+                        handleDialogClose={handleDialogClose}
+                    />
                 </div>
             </div>
 
             <div className="rounded-xl bg-white p-6 shadow-sm mt-3">
-                    <TasksSeparator title="Manhã" icon={<SunIcon className="w-10 h-10" />} />
-                    {mormingTasks.map(task => (
-                        <TaskItem  key={task.id} task={task}
-                            handleCheckboxClick={handleCheckboxClick}
-                            handleDeleteTask={handleDeleteTask}
-                        />
-                    ))}
+                <TasksSeparator title="Manhã" icon={<SunIcon className="w-10 h-10" />} />
+                {mormingTasks.map(task => (
+                    <TaskItem key={task.id} task={task}
+                        handleCheckboxClick={handleCheckboxClick}
+                        handleDeleteTask={handleDeleteTask}
+                    />
+                ))}
 
                 <TasksSeparator title="Tarde" icon={<CloudSunIcon className="w-10 h-10" />} />
-                    {afternoonTasks.map(task => (
-                        <TaskItem  key={task.id} task={task}
-                            handleCheckboxClick={handleCheckboxClick}
-                            handleDeleteTask={handleDeleteTask}
-                        />
-                    ))}
+                {afternoonTasks.map(task => (
+                    <TaskItem key={task.id} task={task}
+                        handleCheckboxClick={handleCheckboxClick}
+                        handleDeleteTask={handleDeleteTask}
+                    />
+                ))}
 
                 <TasksSeparator title="Noite" icon={<MoonIcon className="w-10 h-10" />} />
-                    {nightTasks.map(task => (
-                        <TaskItem key={task.id} task={task}
-                            handleCheckboxClick={handleCheckboxClick}
-                            handleDeleteTask={handleDeleteTask}
-                        />
-                    ))}
+                {nightTasks.map(task => (
+                    <TaskItem key={task.id} task={task}
+                        handleCheckboxClick={handleCheckboxClick}
+                        handleDeleteTask={handleDeleteTask}
+                    />
+                ))}
             </div>
         </div>
     );

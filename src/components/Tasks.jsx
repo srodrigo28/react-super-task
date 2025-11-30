@@ -67,7 +67,7 @@ const Tasks = () => {
                 </div>
 
                 <div className="flex gap-2 items-center">
-                    <Button variant="secondary"> Remover tarefa<TrashIcon /> </Button>
+                    <Button className="hidden" variant="secondary"> Remover tarefa<TrashIcon /> </Button>
                      {/* onClick={ () => alert('Hello how are you') } */}
                     <Button variant="primary" onClick={ () => setAddTaskDialogIsOpen(true) }> 
                         Nova tarefa <AddIcon /> 

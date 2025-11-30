@@ -5,7 +5,6 @@ import Button from "./Button"
 const AddTaskDialog = ({ isOpen }) => {
     if (!isOpen) return
 
-
     return createPortal(
         // <div className="fixed top-0 bottom-0 left-0 h-screen w-screen flex items-center justify-center bg-black/90 z-90">
         <div className="fixed mx-auto inset-0 flex items-center justify-center bg-slate-800/90 z-90">
@@ -16,13 +15,13 @@ const AddTaskDialog = ({ isOpen }) => {
                     <p className="text-center text-slate-500 text-sm mt-1">Insira as informações abaixo</p>
                 
                     <div className="space-y-4 mb-3 mt-5">
-                        <Input label="Titulo" placeholder="insira o titulo da tarefa" />
-                        <Input label="Horário" placeholder="Horário"/>
-                        <Input label="Descrição" placeholder="Descrição da tarefa" />
+                        <Input id="title"       label="Titulo" placeholder="insira o titulo da tarefa" />
+                        <Input id="time"        label="Horário" placeholder="Horário"/>
+                        <Input id="description" label="Descrição" placeholder="Descrição da tarefa" />
                     </div>
                     <div className="flex justify-center gap-3">
-                        <Button>Cancelar</Button>
-                        <Button>Salvar</Button>
+                        <Button variant="danger">Cancelar</Button>
+                        <Button variant="primary">Salvar</Button>
                     </div>
                 </div>
             </div>

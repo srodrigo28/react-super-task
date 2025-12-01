@@ -40,3 +40,5 @@ Uma aplicação moderna de gerenciamento de tarefas construída com **React 19**
 | Husky              | -         | Git hooks para lint antes do commit |
 
 ## 🚀 Começando
+
+### Novas fictures

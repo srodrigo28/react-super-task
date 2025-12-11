@@ -1,6 +1,7 @@
 import { createPortal } from "react-dom";
 import Input from "./Input";
 import Button from "./Button"
+import "./AddTaskDialog.css"
 
 const AddTaskDialog = ({ isOpen, handleDialogClose }) => {
     if (!isOpen) return
@@ -26,8 +27,7 @@ const AddTaskDialog = ({ isOpen, handleDialogClose }) => {
                 </div>
             </div>
 
-        </div>,
-        document.body
+        </div>
         
     )
 }

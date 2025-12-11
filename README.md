@@ -15,6 +15,7 @@ Uma aplicação moderna de gerenciamento de tarefas construída com **React 19**
 - 🔍 Detalhes completos da tarefa
 - 🎨 Interface moderna e responsiva com Tailwind CSS
 - ⚡ Desenvolvimento rápido com Vite + React 19
+- 🎨 Sonner Animation
 - 💾 Dados persistidos localmente com JSON Server
 
 ## 🖼️ Preview
